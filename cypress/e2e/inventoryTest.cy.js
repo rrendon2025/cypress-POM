@@ -16,7 +16,7 @@ describe('Inventory Tests', () => {
         cy.url().should('include', '/inventory.html');
     });
     
-    it('TC1 Should validate Sauce Labs Backpack product details', () => {
+    it('TC1: Should validate Sauce Labs Backpack product details', () => {
         // Validate exact product name
         inventoryPage.getBackpackName()
             .should('be.visible')
@@ -42,7 +42,7 @@ describe('Inventory Tests', () => {
             .and('include', 'backpack');
     });
     
-    it('TC2Should add Sauce Labs Backpack to cart', () => {
+    it('TC2: Should add Sauce Labs Backpack to cart', () => {
         // Add backpack to cart
         inventoryPage.addBackpackToCart();
         
