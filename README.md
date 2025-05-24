@@ -1,6 +1,6 @@
 # Cypress POM Framework
 
-This is a Cypress automation framework using Page Object Model (POM) pattern. For Demonstration Purposes only.
+This is a Cypress automation framework using Page Object Model (POM) pattern to test the SauceDemo website.
 
 ## Features
 
@@ -10,6 +10,7 @@ This is a Cypress automation framework using Page Object Model (POM) pattern. Fo
 - Allure reporting
 - Video recording of test executions
 - Automatic screenshot capture for failed tests
+- CI/CD integration with GitHub Actions
 - Well-structured and maintainable code
 
 ## Prerequisites
@@ -51,6 +52,7 @@ export JAVA_HOME=/path/to/your/jdk
 
 ```
 cypress-POM/
+├── .github/           # GitHub Actions workflow files
 ├── cypress/
 │   ├── artifacts/     
 │   │   ├── videos/    # Test videos
@@ -112,6 +114,23 @@ When a test fails:
 1. A screenshot is automatically captured and saved to `cypress/artifacts/screenshots/`
 2. The screenshot is also attached to the Allure report for easy access
 3. This provides visual evidence of the state of the application at the time of failure
+
+## CI/CD with GitHub Actions
+
+This framework includes a GitHub Actions workflow that:
+
+1. Runs all Cypress tests on push to main branch and on pull requests
+2. Generates Allure reports and uploads them as artifacts
+3. Captures screenshots for failed tests
+4. Records videos of test runs
+5. Publishes the Allure report to GitHub Pages
+
+You can view the workflow configuration in `.github/workflows/cypress.yml`.
+
+To enable GitHub Pages for the Allure report:
+1. Go to your GitHub repository settings
+2. Navigate to Pages
+3. Select the gh-pages branch as the source
 
 ## Troubleshooting
 
