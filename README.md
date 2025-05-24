@@ -1,6 +1,6 @@
 # Cypress POM Framework
 
-This is a Cypress automation framework using Page Object Model (POM) pattern to test the SauceDemo website.
+This is a Cypress automation framework using Page Object Model (POM) pattern. For Demonstration Purposes only.
 
 ## Features
 
