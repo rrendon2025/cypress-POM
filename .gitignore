@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+cypress/artifacts/videos/
+allure-results/
+allure-report/
+package-lock.json 
+.env
+.cursor/

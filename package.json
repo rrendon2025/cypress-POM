@@ -1,0 +1,43 @@
+{
+  "name": "cypress-pom",
+  "version": "1.0.0",
+  "description": "Cypress POM framework for SauceDemo",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run --env allure=true",
+    "allure:report": "npx allure generate allure-results --clean -o allure-report",
+    "allure:open": "npx allure open allure-report",
+    "test:clean:with-video": "rimraf allure-results && rimraf cypress/artifacts/videos && cypress run --env allure=true --config video=true",
+    "test:clean:no-video": "rimraf allure-results && cypress run --env allure=true --config video=false",
+    "allure:clean": "rimraf allure-results allure-report",
+    "clean:all": "rimraf allure-results allure-report && rimraf cypress/artifacts/videos",
+    "clean:artifacts": "rimraf cypress/artifacts/videos",
+    "test:full-report": "npm run test:clean:with-video && npm run allure:report && npm run allure:open",
+    "clean:modules": "rimraf node_modules",
+    "clean:for-git": "npm run clean:all && npm run clean:modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrendon2025/cypress-POM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rrendon2025/cypress-POM/issues"
+  },
+  "homepage": "https://github.com/rrendon2025/cypress-POM#readme",
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "^6.0.4",
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.25.0",
+    "cypress": "^14.4.0",
+    "dotenv": "^16.5.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "rimraf": "^5.0.10"
+  }
+}
